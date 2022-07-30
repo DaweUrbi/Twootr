@@ -41,7 +41,16 @@ so that I react to like, save or re-twoot and see when was twoot posted (days).
 //profile
 const profile  = {
     id:0,
-    author:''
+    author:'',
+    authorSlug:'',
+}
+//new twoot
+const newTwoot = {
+    id:0,
+    author:'',
+    content:'',
+    authorSlug:'',
+    dateAdded:'',
     
 }
 //twoot
@@ -49,6 +58,8 @@ const twoot = {
     id:0,
     author:'',
     content:'',
+    authorSlug:'',
+    dateAdded:'',
 }
 ```
 
