@@ -1,6 +1,6 @@
 # App Idea
 
-myTrakr - React Version
+Twooter - react
 
 # User stories
 
@@ -9,85 +9,58 @@ as a <role> | When I <action>
 I want <goal> | I want <goal>
 so that <gain> | so that <gain>
 
-## Story 1 (Account Form):
+## Story 1 (User):
 
 As a user,
-I want create a new account
-so that I can make transactions
+I want create a user.
+so that I can write twoots.
 
-When I create my account
-I want to select my account as sender or receiver of the transaction
-so that I can post my own transactions
+When I create user
+I can change my name, avatar and post twoots.
 
-# Story 2 (Transaction Form):
-
-As a user,
-I want create a new transaction
-so that I can keep the history of my transactions
-
-When I create my transaction
-I want to show in the transactions list
-so that I can filter my transactions by account
-
-# Story 3 (Category Form):
+# Story 2 (Creating Twoot):
 
 As a user,
-I want create a new category
-so that I can group related transactions
+I want to write a new twoot
+so that I can post my twoot.
 
-When I create my category
-I want to be able to select as the category of my transaction
-so that I can categorize transactions
+When I create my own twoot 
+have to have max 140 characters 
+counter must update during typing.
 
-# Story 4 (Account Summary):
-
-As a user,
-I want to see my acounts and its balance
-so that I can easily decide how much I want to transfer
-
-When I create my category
-I want to be able to select as the category of my transaction
-so that I can categorize transactions
-
-# Story 4 (Filter Section):
+# Story 3 (Twoots):
 
 As a user,
-I want to filter my transactions by account
-so that I can reduce the amount of transaction shown in the list
+I want to see my and other twoots
+so that I react to like, save or re-twoot and see when was twoot posted (days).
 
-When I filter my transactions
-I want to be able to see only transactions of a specific account
-so that I can easily find an old transaction
 
 # Data Structure
 
 ```js
-//account
-const account  = {
+//profile
+const profile  = {
     id:0,
-    name:''
+    author:'',
+    authorSlug:'',
 }
-//list of accounts
-const accounts = [
-    account1, account2, ...
-]
-//transaction
-const transaction = {
+//new twoot
+const newTwoot = {
     id:0,
-    type:'',
-    amount:0,
-    description:'',
-    accountId:0,
-    accountIdFrom:0,
-    accountIdTo:0
+    author:'',
+    content:'',
+    authorSlug:'',
+    dateAdded:'',
+    
 }
-//list of transactions
-const transactions = [transaction1,transaction2,... ]
-
-//category
-const category = {id:0, name:''}
-//list of categories
-const categories = [category1, category2, ...]
+//twoot
+const twoot = {
+    id:0,
+    author:'',
+    content:'',
+    authorSlug:'',
+    dateAdded:'',
+}
 ```
 
 # HTML Structure
@@ -95,29 +68,30 @@ const categories = [category1, category2, ...]
 - body
   - header
     - h1 title
+    - button write a new twoot  
   - main
-    - section new account
-      - form new account
-    - section new transaction
-      - form new transaction
-    - section account summary
-      - ul
-        - li account + balance
-    - section transactions list
-      - filter
+    - section profile
+      - img avatar
+      - h2 name & surname
+      - button edit name
+      - p @name-surname
+    - section new twoot
+      - form new twoot
+        - input text
+        - the capable number of input
+        - submit button
+    - section twoot table
       - table
 
 # Component Structure
 
 - App
   - Header
-  - Main (accounts, transactions)
-    - Account
-    - Transaction
-      - Category (categories)
-    - AccountSummary
-    - TransactionsList
-      - Filter
-      - Table
+  - Main (profile, new twoot, twoot table)
+    - Profile
+    - New twoot
+    - twoot table
+      - twoots
+
 
 # Data Map
