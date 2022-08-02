@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.logo {
+  color: white;
+}
+
+.permanentMarker {
+  font-family: 'Permanent Marker', sans-serif;
+}
+
+.kanit100 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 100;
+}
+
+.kanit300 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+}
+
+.kanit500 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+}
+
+.kanit600 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
 }
