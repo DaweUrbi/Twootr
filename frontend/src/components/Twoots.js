@@ -22,6 +22,7 @@ export default function Twoots() {
   const twootsList = twoots.map((twoot) => {
     return (
         < Post
+          key = { twoot._id }
           author={ twoot.author }
           authorSlug={ twoot.authorSlug }
           content = { twoot.content }
@@ -31,7 +32,7 @@ export default function Twoots() {
   })
 
   return (
-    <div>
+    <div style={{backgroundColor: "#F4F1EC"}}>
       { twootsList }
     </div>
   )
