@@ -43,6 +43,7 @@ const profile  = {
     id:0,
     author:'',
     authorSlug:'',
+    avatar:'',
 }
 //new twoot
 const newTwoot = {
@@ -51,10 +52,9 @@ const newTwoot = {
     content:'',
     authorSlug:'',
     dateAdded:'',
-    
 }
 //twoot
-const twoot = {
+const twoots = {
     id:0,
     author:'',
     content:'',
@@ -82,16 +82,22 @@ const twoot = {
         - submit button
     - section twoot table
       - table
+  - div
+    - div logo and write a new twoot  
+    - div avatar, name, surname
+    - div 
+      - table new twoot
+    - div 
+      - table twoots
+      
+
 
 # Component Structure
 
 - App
   - Header
-  - Main (profile, new twoot, twoot table)
-    - Profile
-    - New twoot
-    - twoot table
-      - twoots
-
+  - Navbar
+  - Twoot
+  - Twoots
 
 # Data Map
