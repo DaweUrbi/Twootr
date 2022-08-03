@@ -67,7 +67,8 @@ const twoots = {
 
 - body
   - navbar
-    - div logo and new twoot
+    - div 
+      - table logo and new twoot
   - header
     - div
       - img avatar
