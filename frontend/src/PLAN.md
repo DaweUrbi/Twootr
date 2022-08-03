@@ -66,15 +66,18 @@ const twoots = {
 # HTML Structure
 
 - body
+  - navbar
+    - div 
+      - table logo and new twoot
   - header
-    - h1 title
-    - button write a new twoot  
-  - main
-    - section profile
+    - div
       - img avatar
-      - h2 name & surname
-      - button edit name
-      - p @name-surname
+      - div 
+        - span name
+        - span surname
+        - img (edit btn)
+      - div 
+        - span author slug
     - section new twoot
       - form new twoot
         - input text
@@ -82,13 +85,7 @@ const twoots = {
         - submit button
     - section twoot table
       - table
-  - div
-    - div logo and write a new twoot  
-    - div avatar, name, surname
-    - div 
-      - table new twoot
-    - div 
-      - table twoots
+
       
 
 
