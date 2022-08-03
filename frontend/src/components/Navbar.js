@@ -14,7 +14,7 @@ export default class Navbar extends React.Component {
                                 </td>
                                 <td align="right" style={{ paddingRight: 15, color: 'white' }}>
                                     <span className="kanit600">Write</span>
-                                    <span className="kanit300"> a new tweet</span>
+                                    <span className="kanit300"> a new twoot</span>
                                 </td>
                             </tr>
                         </tbody>
