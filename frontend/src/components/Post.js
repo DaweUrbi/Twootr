@@ -3,6 +3,7 @@ import flag from "../image/flagBlack.png";
 import retwoot from "../image/retweetBlack.png";
 import favourite from "../image/favoriteBlack.png"
 import {useState} from "react";
+import { Wrapper, TwootTop, TwootBottom, AuthorIcon, FuncIcon, ContentParagraph, TwootLog } from "./Twoots.styled";
 
 export default function Post({author, authorSlug, content, dateAdded}) {
 
@@ -18,48 +19,6 @@ export default function Post({author, authorSlug, content, dateAdded}) {
   const favouriteHandler = () => {
     setFavouriteCount(prevState => prevState + 1)
   }
-
-  const handleMouseHover = () => {
-    console.log(isHovering)
-    setIsHovering(!isHovering);
-  }
-
-  const handleMouseLeave = () => {
-    console.log(isHovering)
-  }
-
-  const Wrapper = styled.div`
-    margin: 3em;
-    padding: 1rem;
-    border: 3px solid black;
-  `;
-
-  const TwootTop = styled.div`
-    display: flex;
-    justify-content: space-between;
-  `
-
-  const AuthorIcon = styled.img`
-    width: 3rem;
-    margin-right: 1rem;
-  `
-
-  const FuncIcon = styled.img`
-    width: 1rem;
-    margin: 0 0.5rem;
-  `
-
-  const ContentParagraph = styled.p`
-    text-align: left;
-    border-bottom: 2px solid #282c34;
-    padding-bottom: .5rem;
-    font-family: "Kanit";
-    font-weight: 600;
-  `
-  const TwootLog = styled.p`
-    text-align: left;
-    margin: 0;
-  `
 
   const dateCalc = (twootDate) => {
     const todayDate = new Date();
@@ -77,7 +36,7 @@ export default function Post({author, authorSlug, content, dateAdded}) {
   }
 
   return (
-    <Wrapper onMouseEnter = { handleMouseHover }  onMouseLeave={handleMouseLeave}>
+    <Wrapper>
       <TwootTop>
         <span style={{display: 'flex'}}>
           < AuthorIcon src={`https://avatars.dicebear.com/api/bottts/${author}.svg`}/>
@@ -86,10 +45,14 @@ export default function Post({author, authorSlug, content, dateAdded}) {
         <p> @{authorSlug} </p>
       </TwootTop>
       <ContentParagraph>{content}</ContentParagraph>
-      <TwootLog>Twooted {dateCalc(dateAdded)} days ago</TwootLog>
-      < FuncIcon src={flag}/>
-      < FuncIcon src={retwoot} onClick={retweetHandler}/> { retweetCount }
-      < FuncIcon src={favourite} onClick={favouriteHandler}/> { favouriteCount }
+      <TwootBottom>
+        <TwootLog>Twooted {dateCalc(dateAdded)} days ago</TwootLog>
+          <div>
+            < FuncIcon src={flag}/>
+            < FuncIcon src={retwoot} onClick={retweetHandler}/> {retweetCount}
+            < FuncIcon src={favourite} onClick={favouriteHandler}/> {favouriteCount}
+          </div>
+      </TwootBottom>
     </Wrapper>
   )
 }
