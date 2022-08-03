@@ -66,6 +66,22 @@ const twoots = {
 # HTML Structure
 
 - body
+  - header
+    - h1 title
+    - button write a new twoot  
+  - main
+    - section profile
+      - img avatar
+      - h2 name & surname
+      - button edit name
+      - p @name-surname
+    - section new twoot
+      - form new twoot
+        - input text
+        - the capable number of input
+        - submit button
+    - section twoot table
+      - table
   - div
     - div logo and write a new twoot  
     - div avatar, name, surname
@@ -74,6 +90,7 @@ const twoots = {
     - div 
       - table twoots
       
+
 
 # Component Structure
 
