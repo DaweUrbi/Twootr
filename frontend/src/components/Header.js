@@ -3,7 +3,7 @@ import { Div, Avatar, ToogleOne, ToogleTwo, ImgEdit, ImgOk, AuthorSlug } from '.
 
 export default class Header extends React.Component {
 	state = {
-		toggle: 0
+		toggle: 1
   	}
 
 	toggleFunc(to){
