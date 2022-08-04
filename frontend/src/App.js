@@ -22,7 +22,8 @@ function App() {
               nick={parentNick}
               updateNick={setParentNick}
       ></Header>
-      <Twoot />
+      <Twoot 
+              />
       < Twoots />
     </div>
   );
