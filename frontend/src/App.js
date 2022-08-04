@@ -1,9 +1,11 @@
 import {useState} from 'react';
 import './App.css';
+import './components/MyTwoot.module.css'
 
 import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
 import Twoots from "./components/Twoots";
+import Twoot from './components/Twoot.js';
 
 function App() {
   const [parentName, setParentName] = useState('David');
@@ -20,6 +22,7 @@ function App() {
               nick={parentNick}
               updateNick={setParentNick}
       ></Header>
+      <Twoot />
       < Twoots />
     </div>
   );
