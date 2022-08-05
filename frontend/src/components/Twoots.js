@@ -1,7 +1,6 @@
 import Post from "./Post";
 
 export default function Twoots(props) {
-  
   const twootsList = props.twoots.map((twoot) => {
     return (
         < Post

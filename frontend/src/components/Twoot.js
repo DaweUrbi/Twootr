@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
-import './MyTwoot.module.css'
-
+import {Twoot} from "./styles/Twoot.style";
 
 function MyTwoot(props) {
 
@@ -27,7 +26,7 @@ function MyTwoot(props) {
       return
     }
     if ((tweet) === "") {
-      alert("This field should not be emity")
+      alert("This field should not be empty")
       return
     }
     console.log(newTwoot)
@@ -42,12 +41,12 @@ function MyTwoot(props) {
 
 
   return (
-    <div className="MytwootWrapper">
+    <Twoot>
       <form onSubmit={myTweet}>
         <div className="TwootFlexUpper">
           <h1>Compose Twoot</h1>
           <input type="text"
-                 placeholder="What are you huming about?"
+                 placeholder="What are you humming about?"
                  onChange={(e) => setTweet(e.target.value)}
           />
         </div>
@@ -56,7 +55,7 @@ function MyTwoot(props) {
           <span>{charCount}</span>
         </div>
       </form>
-    </div>
+    </Twoot>
   )
 }
 
