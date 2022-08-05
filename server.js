@@ -29,6 +29,7 @@ app.post('/twoot', (req, res) => {
     res.status(400).send('Invalid data! Please, review the documentation.');
   } else {
     const { author, authorSlug, content, dateAdded } = req.body.newTwoot;
+    console.log('new twoot', req.body.newTwoot)
     if (
       !author ||
       !author.trim() ||
