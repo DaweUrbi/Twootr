@@ -38,13 +38,6 @@ so that I react to like, save or re-twoot and see when was twoot posted (days).
 # Data Structure
 
 ```js
-//profile
-const profile  = {
-    id:0,
-    author:'',
-    authorSlug:'',
-    avatar:'',
-}
 //new twoot
 const newTwoot = {
     id:0,
@@ -68,7 +61,9 @@ const twoots = {
 - body
   - navbar
     - div 
-      - table logo and new twoot
+      - table 
+        - img logo
+        - span new twoot
   - header
     - div
       - img avatar
