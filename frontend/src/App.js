@@ -1,16 +1,15 @@
 import {useState} from 'react';
 import axios from 'axios';
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 import './App.css';
 import './components/MyTwoot.module.css'
-
 import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
 import Twoots from "./components/Twoots";
 import Twoot from './components/Twoot.js';
 
 function App(props) {
-  
+
   const [twoots, setTwoots] = useState([])
   const DATA_URL = "http://localhost:8080/twoots";
 
@@ -26,7 +25,7 @@ function App(props) {
     getTwoots();
   }, [])
 
-  
+
   const [parentName, setParentName] = useState('David');
   const [parentSurname, setParentSurname] = useState('Urban');
   const [parentNick, setParentNick] = useState('david-urban');
@@ -41,15 +40,15 @@ function App(props) {
               nick={parentNick}
               updateNick={setParentNick}
       ></Header>
-      <Twoot 
-           author = {parentName + " " + parentSurname}
-           authorSlug = {parentNick}
-           twoots={twoots}
-           setTwoots={setTwoots}
-           />
+      <Twoot
+        author={parentName + " " + parentSurname}
+        authorSlug={parentNick}
+        twoots={twoots}
+        setTwoots={setTwoots}
+      />
       < Twoots
         twoots={twoots}
-         />
+      />
     </div>
   );
 }

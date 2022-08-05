@@ -1,19 +1,16 @@
-import styled from "styled-components";
 import flag from "../image/flagBlack.png";
 import retwoot from "../image/retweetBlack.png";
 import favourite from "../image/favoriteBlack.png"
 import {useState} from "react";
-import { Wrapper, TwootTop, TwootBottom, AuthorIcon, FuncIcon, ContentParagraph, TwootLog } from "./Twoots.styled";
+import {AuthorIcon, FuncIcon, Twoots, TwootTop} from "./styles/Twoots.styled";
 
 export default function Post({author, authorSlug, content, dateAdded}) {
 
-  const [ retweetCount, setRetweetCount ] = useState(0);
-  const [ favouriteCount, setFavouriteCount ] = useState(0);
-  const [ isHovering, setIsHovering ] = useState(false);
-
+  const [retweetCount, setRetweetCount] = useState(0);
+  const [favouriteCount, setFavouriteCount] = useState(0);
 
   const retweetHandler = () => {
-    setRetweetCount( prevState => prevState + 1 )
+    setRetweetCount(prevState => prevState + 1)
   }
 
   const favouriteHandler = () => {
@@ -26,7 +23,7 @@ export default function Post({author, authorSlug, content, dateAdded}) {
     const month = todayDate.getMonth() + 1;
     const theToday = todayDate.getDate();
     const todayDay = year + '-' + month + '-' + theToday;
-    if(todayDay !== twootDate) {
+    if (todayDay !== twootDate) {
       const targetDay = new Date(twootDate).getTime();
       const today = new Date().getTime()
       const pastTime = Math.ceil((today - targetDay) / 1000 / 60 / 60 / 24)
@@ -36,23 +33,26 @@ export default function Post({author, authorSlug, content, dateAdded}) {
   }
 
   return (
-    <Wrapper>
-      <TwootTop>
-        <span style={{display: 'flex'}}>
-          < AuthorIcon src={`https://avatars.dicebear.com/api/bottts/${author}.svg`}/>
-          <p>{author}</p>
-        </span>
-        <p> @{authorSlug} </p>
+    <Twoots>
+      < TwootTop >
+        <div className="container">
+          < AuthorIcon className="author-icon" src={`https://avatars.dicebear.com/api/bottts/${author}.svg`}/>
+          <h3>{author}</h3>
+        </div>
+        <h3> @{authorSlug} </h3>
       </TwootTop>
-      <ContentParagraph>{content}</ContentParagraph>
-      <TwootBottom>
-        <TwootLog>Twooted {dateCalc(dateAdded)} days ago</TwootLog>
-          <div>
-            < FuncIcon src={flag}/>
-            < FuncIcon src={retwoot} onClick={retweetHandler}/> {retweetCount}
-            < FuncIcon src={favourite} onClick={favouriteHandler}/> {favouriteCount}
-          </div>
-      </TwootBottom>
-    </Wrapper>
+
+      <p>&emsp;{content}</p>
+
+      <div className='post-bottom'>
+        <h3>&emsp;{dateCalc(dateAdded)} days ago</h3>
+        <div className='icon-container'>
+          < FuncIcon src={flag}/>
+          < FuncIcon src={retwoot} onClick={retweetHandler}/> {retweetCount}
+          < FuncIcon src={favourite} onClick={favouriteHandler}/> {favouriteCount}
+        </div>
+      </div>
+
+    </Twoots>
   )
 }
