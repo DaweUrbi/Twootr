@@ -49,6 +49,7 @@ const [tweet, setTweet] = useState("")
                 <div className="TwootFlexUpper">
                     <h1>Compose Twoot</h1>
                     <input type="text" 
+                    id="inputTwoot"
                     placeholder="What are you huming about?"
                     onChange={(e) => setTweet(e.target.value)}
                     />

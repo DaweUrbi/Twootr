@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
                                 <td align="left" style={{ paddingLeft: 15 }}>
                                     <div className="logo permanentMarker">Twootr</div>
                                 </td>
-                                <td align="right" style={{ paddingRight: 15, color: 'white' }}>
+                                <td onClick={ () => document.getElementById('inputTwoot').focus() } align="right" style={{ paddingRight: 15, color: 'white' }}>
                                     <span className="kanit600">Write</span>
                                     <span className="kanit300"> a new twoot</span>
                                 </td>
