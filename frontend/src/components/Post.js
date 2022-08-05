@@ -9,8 +9,6 @@ export default function Post({author, authorSlug, content, dateAdded}) {
 
   const [ retweetCount, setRetweetCount ] = useState(0);
   const [ favouriteCount, setFavouriteCount ] = useState(0);
-  const [ isHovering, setIsHovering ] = useState(false);
-
 
   const retweetHandler = () => {
     setRetweetCount( prevState => prevState + 1 )
