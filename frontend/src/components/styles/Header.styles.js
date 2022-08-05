@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AuthorSlug = styled.div`
-	font-size: 12px;
+	font-size: 15px;
 	color: white;
 	font-family: 'Kanit', sans-serif;
     font-weight: 300;
