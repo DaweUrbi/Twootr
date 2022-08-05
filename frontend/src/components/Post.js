@@ -3,7 +3,7 @@ import flag from "../image/flagBlack.png";
 import retwoot from "../image/retweetBlack.png";
 import favourite from "../image/favoriteBlack.png"
 import {useState} from "react";
-import { Wrapper, TwootTop, TwootBottom, AuthorIcon, FuncIcon, ContentParagraph, TwootLog } from "./Twoots.styled";
+import { Wrapper, TwootTop, TwootBottom, AuthorIcon, FuncIcon, ContentParagraph, TwootLog } from "./styles/Twoots.styled";
 
 export default function Post({author, authorSlug, content, dateAdded}) {
 
