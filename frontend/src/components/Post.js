@@ -18,16 +18,12 @@ export default function Post({author, authorSlug, content, dateAdded}) {
   }
 
   const dateCalc = (twootDate) => {
-    const todayDate = new Date();
-    const year = todayDate.getFullYear();
-    const month = todayDate.getMonth() + 1;
-    const theToday = todayDate.getDate();
-    const todayDay = year + '-' + month + '-' + theToday;
+    const todayDay = new Date().toLocaleDateString("en-CA")
     if (todayDay !== twootDate) {
       const targetDay = new Date(twootDate).getTime();
       const today = new Date().getTime()
       const pastTime = Math.ceil((today - targetDay) / 1000 / 60 / 60 / 24)
-      return pastTime;
+      return pastTime + "days ago";
     }
     return "today"
   }
@@ -41,11 +37,9 @@ export default function Post({author, authorSlug, content, dateAdded}) {
         </div>
         <h3> @{authorSlug} </h3>
       </TwootTop>
-
       <p>&emsp;{content}</p>
-
       <div className='post-bottom'>
-        <h3>&emsp;{dateCalc(dateAdded)} days ago</h3>
+        <h3>posted &emsp;{dateCalc(dateAdded)}</h3>
         <div className='icon-container'>
           < FuncIcon src={flag}/>
           < FuncIcon src={retwoot} onClick={retweetHandler}/> {retweetCount}
