@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const TwootStyle = styled.div`
   background: #F4F1EC;
   padding: 2rem 3rem;
@@ -21,6 +22,12 @@ export const TwootStyle = styled.div`
     * {
       margin: 0;
     }
+    span {
+      font-family: 'Permanent Marker', sans-serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+    
   }
   
   button {
