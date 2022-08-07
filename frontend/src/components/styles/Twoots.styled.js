@@ -51,7 +51,7 @@ export const Twoots = styled.div`
         opacity:0.5;
         display: block;
         width: 1.7rem;
-        height: 1.7rem;
+        height: 1.4rem;
         margin: 0 1.5rem;
       }
     }
