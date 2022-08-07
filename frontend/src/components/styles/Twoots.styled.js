@@ -45,12 +45,14 @@ export const Twoots = styled.div`
     
     .icon-container {
       display: flex;
+      font-size: 1.5rem;
       
       img {
+        opacity:0.5;
         display: block;
-        width: 1.5rem;
-        height: auto;
-        margin: 0 .7rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin: 0 1.5rem;
       }
     }
   }
