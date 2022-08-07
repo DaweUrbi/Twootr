@@ -6,7 +6,8 @@ import {TwootStyle} from "./styles/Twoot.style";
 function MyTwoot(props) {
 
   const [disable, setDisable] = useState(false)
-  const [tweet, setTweet] = useState("")
+  const [tweet, setTweet] = useState("");
+  const [lessThanZero, setLessThanZero] = useState(false)
 
   const date = new Date().toLocaleDateString("en-CA")
 
@@ -35,10 +36,12 @@ function MyTwoot(props) {
 
   function checkTweet(e) {
     setTweet(e.target.value)
+
     if (e.target.value.length >= maxChars) {
       setDisable(true)
       // alert("You have exceeded the character limit")
       charCount = 0
+      setLessThanZero(true)
       return
     }
     if ((e.target.value) === "") {
@@ -47,6 +50,7 @@ function MyTwoot(props) {
       return
     }
     setDisable(false)
+    setLessThanZero(false)
   }
 
   return (
@@ -61,7 +65,7 @@ function MyTwoot(props) {
         </div>
         <div className="TwootFlexBottom">
           <button disabled={disable}>Twoot</button>
-          <span>{charCount}</span>
+          <span style={{ color: lessThanZero ? "red" : "black" }}>{charCount}</span>
         </div>
       </form>
     </TwootStyle>
