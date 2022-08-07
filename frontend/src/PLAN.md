@@ -24,8 +24,8 @@ As a user,
 I want to write a new twoot
 so that I can post my twoot.
 
-When I create my own twoot 
-have to have max 140 characters 
+When I create my own twoot
+have to have max 140 characters
 counter must update during typing.
 
 # Story 3 (Twoots):
@@ -34,60 +34,61 @@ As a user,
 I want to see my and other twoots
 so that I react to like, save or re-twoot and see when was twoot posted (days).
 
-
 # Data Structure
 
 ```js
 //profile
-const profile  = {
-    id:0,
-    author:'',
-    authorSlug:'',
-    avatar:'',
-}
+const profile = {
+  id: 0,
+  author: "",
+  authorSlug: "",
+  avatar: "",
+};
 //new twoot
 const newTwoot = {
-    id:0,
-    author:'',
-    content:'',
-    authorSlug:'',
-    dateAdded:'',
-}
+  id: 0,
+  author: "",
+  content: "",
+  authorSlug: "",
+  dateAdded: "",
+};
 //twoot
 const twoots = {
-    id:0,
-    author:'',
-    content:'',
-    authorSlug:'',
-    dateAdded:'',
-}
+  id: 0,
+  author: "",
+  content: "",
+  authorSlug: "",
+  dateAdded: "",
+};
 ```
 
 # HTML Structure
 
 - body
   - navbar
-    - div 
+    - div
       - table logo and new twoot
   - header
     - div
       - img avatar
-      - div 
+      - div
         - span name
         - span surname
         - img (edit btn)
-      - div 
+      - div
         - span author slug
     - section new twoot
       - form new twoot
-        - input text
-        - the capable number of input
-        - submit button
+        - div
+          - h1 Compose twoot
+          - input text
+        - div
+        - div
+          - submit button
+          - span the capable number of input
+        - div
     - section twoot table
       - table
-
-      
-
 
 # Component Structure
 
