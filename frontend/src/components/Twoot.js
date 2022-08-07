@@ -1,10 +1,13 @@
 import {useState} from 'react';
 import axios from 'axios';
-import {Twoot} from "./styles/Twoot.style";
+import {TwootStyle} from "./styles/Twoot.style";
+
 
 function MyTwoot(props) {
 
+  const [disable, setDisable] = useState(false)
   const [tweet, setTweet] = useState("")
+
   const date = new Date().toLocaleDateString("en-CA")
 
   const newTwoot = {
@@ -15,20 +18,11 @@ function MyTwoot(props) {
   }
 
   const inputLength = (tweet.length)
-  var maxChars = 140
-  var charCount = maxChars - inputLength
+  let maxChars = 140
+  let charCount = maxChars - inputLength
 
   function myTweet(e) {
     e.preventDefault()
-    if (inputLength >= maxChars) {
-      alert("You have exceeded the character limit")
-      charCount = 0
-      return
-    }
-    if ((tweet) === "") {
-      alert("This field should not be empty")
-      return
-    }
     console.log(newTwoot)
     console.log(tweet);
     console.log();
@@ -39,23 +33,38 @@ function MyTwoot(props) {
     )
   }
 
+  function checkTweet(e) {
+    setTweet(e.target.value)
+    if (e.target.value.length >= maxChars) {
+      setDisable(true)
+      // alert("You have exceeded the character limit")
+      charCount = 0
+      return
+    }
+    if ((e.target.value) === "") {
+      setDisable(true)
+      // alert("This field should not be empty")
+      return
+    }
+    setDisable(false)
+  }
 
   return (
-    <Twoot>
+    <TwootStyle>
       <form onSubmit={myTweet}>
         <div className="TwootFlexUpper">
           <h1>Compose Twoot</h1>
           <input type="text"
                  placeholder="What are you humming about?"
-                 onChange={(e) => setTweet(e.target.value)}
+                 onChange={checkTweet}
           />
         </div>
         <div className="TwootFlexBottom">
-          <button>Twoot</button>
+          <button disabled={disable}>Twoot</button>
           <span>{charCount}</span>
         </div>
       </form>
-    </Twoot>
+    </TwootStyle>
   )
 }
 
