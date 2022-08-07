@@ -1,20 +1,30 @@
 import flag from "../image/flagBlack.png";
+import flagPink from "../image/flagColor.png";
 import retwoot from "../image/retweetBlack.png";
-import favourite from "../image/favoriteBlack.png"
+import retwootColor from "../image/retweetColor.png";
+import favouriteColor from "../image/favoriteColor.png";
+import favourite from "../image/favoriteBlack.png";
+
+
 import {useState} from "react";
 import {AuthorIcon, FuncIcon, Twoots, TwootTop} from "./styles/Twoots.styled";
 
 export default function Post({author, authorSlug, content, dateAdded}) {
 
-  const [retweetCount, setRetweetCount] = useState(0);
-  const [favouriteCount, setFavouriteCount] = useState(0);
+  const [retweet, setRetweet] = useState(false);
+  const [isfavourite, setFavourite] = useState(false);
+  const [flagColor, setFlagColor] = useState(false);
+
+  const flagColorHandler = () => {
+    setFlagColor(!flagColor)
+  }
 
   const retweetHandler = () => {
-    setRetweetCount(prevState => prevState + 1)
+    setRetweet(!retweet)
   }
 
   const favouriteHandler = () => {
-    setFavouriteCount(prevState => prevState + 1)
+    setFavourite(!isfavourite)
   }
 
   const dateCalc = (twootDate) => {
@@ -41,12 +51,11 @@ export default function Post({author, authorSlug, content, dateAdded}) {
       <div className='post-bottom'>
         <h3>posted &emsp;{dateCalc(dateAdded)}</h3>
         <div className='icon-container'>
-          < FuncIcon src={flag}/>
-          < FuncIcon src={retwoot} onClick={retweetHandler}/> {retweetCount}
-          < FuncIcon src={favourite} onClick={favouriteHandler}/> {favouriteCount}
+          < FuncIcon src={flagColor ? flagPink : flag} onClick={flagColorHandler}/>
+          < FuncIcon src={retweet ? retwootColor : retwoot} onClick={retweetHandler}/>
+          < FuncIcon src={isfavourite ? favouriteColor : favourite} onClick={favouriteHandler}/>
         </div>
       </div>
-
     </Twoots>
   )
 }
