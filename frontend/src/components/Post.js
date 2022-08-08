@@ -8,7 +8,6 @@ import favourite from "../image/favoriteBlack.png";
 
 import {useState} from "react";
 import {AuthorIcon, FuncIcon, Twoots, TwootTop} from "./styles/Twoots.styled";
-
 export default function Post({author, authorSlug, content, dateAdded}) {
 
   const [retweet, setRetweet] = useState(false);
@@ -27,6 +26,10 @@ export default function Post({author, authorSlug, content, dateAdded}) {
     setFavourite(!isfavourite)
   }
 
+
+  const firstName = author.split(/,|\s/)[0].toLowerCase();
+  const lastName = author.split(/,|\s/)[1].toLowerCase();
+
   const dateCalc = (twootDate) => {
     const todayDay = new Date().toLocaleDateString("en-CA")
     if (todayDay !== twootDate) {
@@ -42,7 +45,7 @@ export default function Post({author, authorSlug, content, dateAdded}) {
     <Twoots>
       < TwootTop >
         <div className="container">
-          < AuthorIcon className="author-icon" src={`https://avatars.dicebear.com/api/bottts/${author}.svg`}/>
+          < AuthorIcon className="author-icon" src={`https://avatars.dicebear.com/api/bottts/${firstName+'-'+lastName}.svg`}/>
           <h3>{author}</h3>
         </div>
         <h3> @{authorSlug} </h3>
