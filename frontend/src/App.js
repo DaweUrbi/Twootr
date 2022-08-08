@@ -7,7 +7,7 @@ import Header from './components/Header.js';
 import Twoots from "./components/Twoots";
 import Twoot from './components/Twoot.js';
 
-function App(props) {
+function App() {
 
   const [twoots, setTwoots] = useState([])
   const DATA_URL = "http://localhost:8080/twoots";

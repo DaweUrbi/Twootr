@@ -83,7 +83,10 @@ const twoots = {
           - span the capable number of input
         - div
     - section twoot table
-      - table
+      - div
+        - div container
+          - div post-top
+          - div post-bottom
 
 # Component Structure
 
@@ -92,5 +95,6 @@ const twoots = {
   - Navbar
   - Twoot
   - Twoots
+    - Post
 
 # Data Map
