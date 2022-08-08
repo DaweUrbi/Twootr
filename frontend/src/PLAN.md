@@ -37,16 +37,6 @@ so that I react to like, save or re-twoot and see when was twoot posted (days).
 # Data Structure
 
 ```js
-<<<<<<< HEAD
-=======
-//profile
-const profile = {
-  id: 0,
-  author: "",
-  authorSlug: "",
-  avatar: "",
-};
->>>>>>> upstream/asafe
 //new twoot
 const newTwoot = {
   id: 0,
@@ -69,15 +59,10 @@ const twoots = {
 
 - body
   - navbar
-<<<<<<< HEAD
     - div 
       - table 
         - img logo
         - span new twoot
-=======
-    - div
-      - table logo and new twoot
->>>>>>> upstream/asafe
   - header
     - div
       - img avatar
