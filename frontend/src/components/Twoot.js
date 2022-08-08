@@ -61,6 +61,7 @@ function MyTwoot(props) {
           <input type="text"
                  placeholder="What are you humming about?"
                  onChange={checkTweet}
+                 id="inputTwoot"
           />
         </div>
         <div className="TwootFlexBottom">
